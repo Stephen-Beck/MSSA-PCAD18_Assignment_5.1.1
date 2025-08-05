@@ -17,3 +17,7 @@ Input: x = -121
 Output: false
 ```
 Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+---
+### Code Output:
+![Code Output](https://raw.githubusercontent.com/Stephen-Beck/MSSA-PCAD18_Assignment_5.1.1/master/Output.png)
