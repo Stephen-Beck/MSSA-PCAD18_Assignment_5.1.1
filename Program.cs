@@ -68,9 +68,23 @@ namespace Assignment_5._1._1
 
         static bool IsPalindrome(int input)
         {
+            #region Much More Efficient Solution
+            int initialInput = input;
+            int reverseInput = 0;
+
+            while (input > 0)
+            {
+                reverseInput = reverseInput * 10 + input % 10;
+                input /= 10;
+            }
+
+            return initialInput == reverseInput;
+            #endregion
+
+            #region My Original Bulky Solution
             // I had to look up how to mathematically find the first digit of a number (did not look up any code)
             // I'm sure there is a much better way to do this, because this is super messy
-            
+
             // If input is negative, return false
             if (input < 0) return false;
 
@@ -105,6 +119,7 @@ namespace Assignment_5._1._1
 
             // If number < 10, there is only 1 digit left; return true
             return true;
+            #endregion
         }
 
         static bool IsPalindrome_ListSolution(int input)
@@ -126,10 +141,10 @@ namespace Assignment_5._1._1
             }
 
             // Use two pointers in List to check for palindrome
-            for (int i = 0; i < numList.Count/2; i++)
+            for (int i = 0; i < numList.Count / 2; i++)
             {
                 int lastNum = numList.Count - 1;
-                
+
                 // If numbers don't match, return false
                 if (numList[i] != numList[lastNum - i])
                     return false;
